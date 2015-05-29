@@ -21,8 +21,8 @@ myApp.directive('makeEditable', function() {
          console.log('star of makeEditable');
          //
          //
-         var textBlock = element.find('p')[0];
-         console.log(textBlock);
+         var textBlock = element.find('p');
+         console.dir(textBlock);
          
          scope.buttonState = "Edit";
          scope.toggleEdit = function() {
@@ -35,7 +35,7 @@ myApp.directive('makeEditable', function() {
             console.log('start of enterEditMode');
             //
             scope.buttonState = "Save";
-            // .attr('contenteditable', 'true');
+            textBlock.attr('contenteditable', 'true');
             //
             console.log('end of enterEditMode');
             //
@@ -45,7 +45,7 @@ myApp.directive('makeEditable', function() {
             console.log('start of exitEditMode');
             //
             scope.buttonState = "Edit";
-            // .attr('contenteditable', 'false');
+            textBlock.attr('contenteditable', 'false');
             //
             console.log('end of exitEditMode');
             //
