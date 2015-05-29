@@ -36,6 +36,7 @@ myApp.directive('makeEditable', function() {
             //
             scope.buttonState = "Save";
             textBlock.attr('contenteditable', 'true');
+            textBlock.addClass('editable');
             //
             console.log('end of enterEditMode');
             //
@@ -46,6 +47,7 @@ myApp.directive('makeEditable', function() {
             //
             scope.buttonState = "Edit";
             textBlock.attr('contenteditable', 'false');
+            textBlock.removeClass('editable');
             //
             console.log('end of exitEditMode');
             //
